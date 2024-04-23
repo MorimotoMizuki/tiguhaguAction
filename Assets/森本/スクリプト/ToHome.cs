@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ToHome : MonoBehaviour
 {
+    private Animator Rogo_animator;
+    private Animator Tiguha_animator;
+    public GameObject Rogo;
+    public GameObject Tiguhakun;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Rogo_animator = Rogo.GetComponent<Animator>();
+        Tiguha_animator = Tiguhakun.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,12 +25,16 @@ public class ToHome : MonoBehaviour
 
     public void PushButton()
     {
-        Invoke("LoadScene", 3.0f);
+        Invoke("LoadScene", 1.0f);
+
+        Rogo_animator.Play("Rogo_Title");
+        Tiguha_animator.Play("Title_dash_tiguhakun");
+
     }
 
-    private void LoadScene(string sceneName)
+    public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Homescene");
     }
 
 }
