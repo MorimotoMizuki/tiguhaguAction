@@ -5,13 +5,19 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerController playerController;
+    public Blinkinger blinkinger;
+    public Gameclearover gameclearover;
 
-   public void Collision(Collision collision)
+   public void PCollision(Collider other)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Obstacle")
         {
-
+            playerController.playerHP--;
+            blinkinger.Blink();
         }
-        playerController.playerHP--;
+        if(other.gameObject.tag=="Clear")
+        {
+            gameclearover.GameClearobj.SetActive(true);
+        }
     }
 }

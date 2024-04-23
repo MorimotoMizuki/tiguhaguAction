@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
     float times=1.00001f;//徐々に加速するための
 
     public PlayerCollision playerCollision;
+    public Blinkinger blinkinger;
+
+    public bool isBlink = false;//点滅しているかどうか
+    public bool isClear = false;//クリアしているかどうか
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +35,11 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space))//左方向に移動
+        if (Input.GetKeyDown(KeyCode.Space)&&-4.0f<transform.position.x)//左方向に移動
         {
             transform.position -= widthpower * transform.right;
         }
-        if(Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))//右方向に移動
+        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<4.0f)//右方向に移動
         {
             transform.position += widthpower * transform.right;
         }
@@ -43,6 +50,12 @@ public class PlayerController : MonoBehaviour
         }
 
         forwordpower *= times;
+
+        if(isClear)
+        {
+            transform.position = new Vector3(0, 1, 180);
+        }
+        
     }
  
     private void OnCollisionStay(Collision collision)
@@ -52,10 +65,19 @@ public class PlayerController : MonoBehaviour
             isGround = true;
         }
 
-        playerCollision.Collision(collision);
+        
     }
     private void OnCollisionExit(Collision collision)
     {
         isGround = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        playerCollision.PCollision(other);
+        isBlink = true;
+        blinkinger._time = 0.0f;
+        
+        
     }
 }
