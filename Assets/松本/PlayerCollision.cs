@@ -8,16 +8,19 @@ public class PlayerCollision : MonoBehaviour
     public Blinkinger blinkinger;
     public Gameclearover gameclearover;
 
-   public void PCollision(Collider other)
+    public bool isBlink = false;//点滅しているかどうか
+
+    public void PCollision(Collider other)//接触時に呼び出される
     {
-        if (other.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Obstacle")//障害物
         {
             playerController.playerHP--;
-            blinkinger.Blink();
+            isBlink = true;
         }
-        if(other.gameObject.tag=="Clear")
+        if(other.gameObject.tag=="Clear")//クリアWall
         {
             gameclearover.GameClearobj.SetActive(true);
+            playerController.isClear = true;
         }
     }
 }

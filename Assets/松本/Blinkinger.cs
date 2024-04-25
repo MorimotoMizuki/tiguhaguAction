@@ -12,6 +12,7 @@ public class Blinkinger : MonoBehaviour
     public double _time;
 
     public PlayerController playerController;
+    public PlayerCollision playerCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class Blinkinger : MonoBehaviour
 
     public void Blink()
     {
-        if(playerController.isBlink)
+        if(playerCollision.isBlink)
         {
             // “à•”Žž‚ðŒo‰ß‚³‚¹‚é
             _time += Time.deltaTime;
@@ -42,7 +43,7 @@ public class Blinkinger : MonoBehaviour
         }
         if(_time>1f)
         {
-            playerController.isBlink = false;
+            playerCollision.isBlink = false;
             _target.enabled = true;
         }
     }

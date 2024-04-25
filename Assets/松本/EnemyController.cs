@@ -30,16 +30,18 @@ public class EnemyController : MonoBehaviour
         if (isX_Axis)
             X_Axis_Move();
 
+        if (isZ_Axis)
+            Z_Axis_Move();
 
     }
 
     void X_Axis_Move()
     {
-        if (transform.position.x > RightLimit)
+        if (transform.position.x > RightLimit)//右限界に達したら反対に変更
         {
             direc = -1;
         }
-        if (transform.position.x < LeftLimit)
+        if (transform.position.x < LeftLimit)//左限界に達したら反対に変更
         {
             direc = 1;
         }
@@ -49,7 +51,16 @@ public class EnemyController : MonoBehaviour
 
     public void Z_Axis_Move() 
     {
-    
+        if (transform.position.z > ForwordLimit)//前方向限界に達したら反対に変更
+        {
+            direc = -1;
+        }
+        if (transform.position.z < BackwordLimit)//手前方向限界に達したら反対に変更
+        {
+            direc = 1;
+        }
+
+        transform.position += transform.forward * ZPower * direc;
     }
 
 }
