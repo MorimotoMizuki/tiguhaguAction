@@ -7,6 +7,7 @@ public class PlayerCollision : MonoBehaviour
     public PlayerController playerController;
     public Blinkinger blinkinger;
     public Gameclearover gameclearover;
+    public HPbarManager hpbarManager;
 
     public bool isBlink = false;//ì_ñ≈ÇµÇƒÇ¢ÇÈÇ©Ç«Ç§Ç©
 
@@ -15,6 +16,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")//è·äQï®
         {
             playerController.playerHP--;
+            hpbarManager.HPdamage();
             isBlink = true;
         }
         if(other.gameObject.tag=="Clear")//ÉNÉäÉAWall

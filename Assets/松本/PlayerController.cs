@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     float widthpower = 0.1f;//横移動の幅
     float jumpforce = 0.2f;//ジャンプ時の力加減
     bool isGround = false;//地面についているかどうか
-    public int playerHP=10;
+    public int playerHP=10;//プレイヤーのHP
 
     float times=1.00001f;//徐々に加速するための
 
@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
 
     //public bool isBlink = false;//点滅しているかどうか
     public bool isClear = false;//クリアしているかどうか
+    public bool isOver = false;//ゲームオーバーしているかどうか
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position -= widthpower * transform.right;
         }
-        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<5.0f&&isClear)//右方向に移動
+        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<5.0f&&!isClear)//右方向に移動
         {
             transform.position += widthpower * transform.right;
         }
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         forwordpower *= times;
 
-        if(isClear)
+        if(isClear||isOver)
         {
             forwordpower = 0.0f;
         }

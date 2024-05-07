@@ -22,6 +22,7 @@ public class Gameclearover : MonoBehaviour
         if(playerController.playerHP==0)
         {
             Gameoverobj.SetActive(true);
+            playerController.isOver = true;
         }
     }
 }

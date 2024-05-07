@@ -24,9 +24,9 @@ public class CameraController : MonoBehaviour
 
         forwordpower *= times;
 
-        if(playerController.isClear)
+        if(playerController.isClear|| playerController.isOver)
         {
-            transform.position = new Vector3(0, 1, 180);
+            forwordpower = 0.0f;
         }
     }
 }
