@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
     public HPbarManager hpbarManager;
 
     public bool isBlink = false;//点滅しているかどうか
+    ScoreManager scoreManager;
 
     public void PCollision(Collider other)//接触時に呼び出される
     {
@@ -23,6 +24,16 @@ public class PlayerCollision : MonoBehaviour
         {
             gameclearover.GameClearobj.SetActive(true);
             playerController.isClear = true;
+        }
+        if(other.gameObject.tag=="Silver")//銀コイン取得時
+        {
+            scoreManager.score_num += 1500;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "Copper")//銅コイン取得時
+        {
+            scoreManager.score_num += 1000;
+            Destroy(other.gameObject);
         }
     }
 }
