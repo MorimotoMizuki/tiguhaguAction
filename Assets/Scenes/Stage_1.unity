@@ -159,7 +159,12 @@ MonoBehaviour:
   blinkinger: {fileID: 1828509037}
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
+  gameManager: {fileID: 0}
   isBlink: 0
+  stage1MAXscore: 0
+  stage2MAXscore: 0
+  stage3MAXscore: 0
+  playerHPMAX: 0
 --- !u!65 &125158499
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1522,7 +1527,12 @@ MonoBehaviour:
   blinkinger: {fileID: 1828509037}
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
+  gameManager: {fileID: 0}
   isBlink: 0
+  stage1MAXscore: 0
+  stage2MAXscore: 0
+  stage3MAXscore: 0
+  playerHPMAX: 0
 --- !u!65 &1526335406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1715,7 +1725,12 @@ MonoBehaviour:
   blinkinger: {fileID: 1828509037}
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
+  gameManager: {fileID: 0}
   isBlink: 0
+  stage1MAXscore: 0
+  stage2MAXscore: 0
+  stage3MAXscore: 0
+  playerHPMAX: 0
 --- !u!1 &1675697872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1767,12 @@ MonoBehaviour:
   blinkinger: {fileID: 1828509037}
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
+  gameManager: {fileID: 0}
   isBlink: 0
+  stage1MAXscore: 0
+  stage2MAXscore: 0
+  stage3MAXscore: 0
+  playerHPMAX: 0
 --- !u!65 &1675697874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2163,7 +2183,12 @@ MonoBehaviour:
   blinkinger: {fileID: 1828509037}
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
+  gameManager: {fileID: 0}
   isBlink: 0
+  stage1MAXscore: 11500
+  stage2MAXscore: 20000
+  stage3MAXscore: 20000
+  playerHPMAX: 10
 --- !u!1 &1852575805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2400,7 @@ GameObject:
   - component: {fileID: 2102313717}
   - component: {fileID: 2102313721}
   - component: {fileID: 2102313720}
+  - component: {fileID: 2102313722}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2478,6 +2504,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2102313720}
   playerController: {fileID: 1828509036}
+--- !u!114 &2102313722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102313716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c893d2f5cc16432418a204628a1ed46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManagerPrefabs:
+  - {fileID: 3422291456117383107, guid: e29045b898531914d99ea2bb160da433, type: 3}
 --- !u!1 &2141046579
 GameObject:
   m_ObjectHideFlags: 0
