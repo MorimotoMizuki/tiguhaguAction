@@ -20,6 +20,6 @@ public class ScoreManager : MonoBehaviour
 
         score_text.text = "スコア："+score_num;
 
-        score_num++;
+        //score_num++;
     }
 }

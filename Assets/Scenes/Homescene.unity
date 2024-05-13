@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af776b22a86b0ac41bd0dc0453df3385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagenum: 3
 --- !u!114 &250654784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +404,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage1
+          m_StringArgument: Stage_3
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1933309741}
@@ -1102,6 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af776b22a86b0ac41bd0dc0453df3385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagenum: 0
 --- !u!1 &1045348688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af776b22a86b0ac41bd0dc0453df3385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagenum: 2
 --- !u!114 &1521984992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,7 +1625,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage1
+          m_StringArgument: Stage_2
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1933309741}
@@ -2017,6 +2020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159c327ab62badb48936e8a4529e9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 4860157488870254038, guid: e29045b898531914d99ea2bb160da433, type: 3}
   Perfect: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
   Gold: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
   Silver: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
@@ -2079,6 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af776b22a86b0ac41bd0dc0453df3385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagenum: 1
 --- !u!114 &2051949001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,7 +2137,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage1
+          m_StringArgument: Stage_1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1933309741}

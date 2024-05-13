@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ToNextScene : MonoBehaviour
 {
+    public int stagenum;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,6 @@ public class ToNextScene : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        gameManager.stage_num = stagenum;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Home_Score_Generate : MonoBehaviour
 {
+    public GameManager gameManager;
+
     //メダルのオブジェクト変数
     public GameObject Perfect;
     public GameObject Gold;
@@ -22,9 +24,9 @@ public class Home_Score_Generate : MonoBehaviour
     public int Stage3_MAX = 10000;
 
     //各ステージがパーフェクトでクリアしたか判定するフラグ
-    private bool Stage1_Perfect_flag = false;
-    private bool Stage2_Perfect_flag = false;
-    private bool Stage3_Perfect_flag = false;
+    //private bool Stage1_Perfect_flag = false;
+    //private bool Stage2_Perfect_flag = false;
+    //private bool Stage3_Perfect_flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-        if (Stage1_Perfect_flag)//ステージ１がパーフェクト
+        if (gameManager.stage1_P)//ステージ１がパーフェクト
         {
             Instantiate(Perfect, new Vector3(230f, 410f, 0f), Quaternion.identity, Parent);
         }
@@ -54,7 +56,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE2SCORE", -1);
 
-        if (Stage2_Perfect_flag)//ステージ２がパーフェクト
+        if (gameManager.stage2_P)//ステージ２がパーフェクト
         {
             Instantiate(Perfect, new Vector3(400f, 260f, 0f), Quaternion.identity, Parent);
         }
@@ -75,7 +77,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE3SCORE", -1);
 
-        if (Stage3_Perfect_flag)//ステージ３がパーフェクト
+        if (gameManager.stage3_P)//ステージ３がパーフェクト
         {
             Instantiate(Perfect, new Vector3(580f, 115f, 0f), Quaternion.identity, Parent);
         }
