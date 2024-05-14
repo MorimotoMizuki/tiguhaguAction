@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
     public GameManager gameManager;
 
     public bool isBlink = false;//点滅しているかどうか
-    ScoreManager scoreManager;
+    public ScoreManager scoreManager;
 
     public int stage1MAXscore;
     public int stage2MAXscore;
@@ -51,7 +51,12 @@ public class PlayerCollision : MonoBehaviour
                     gameManager.stage3_P = true;
             }
         }
-        if(other.gameObject.tag=="Silver")//銀コイン取得時
+        if(other.gameObject.tag == "Gold")//金コイン
+        {
+            scoreManager.score_num += 3000;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "Silver")//銀コイン取得時
         {
             scoreManager.score_num += 1500;
             Destroy(other.gameObject);
