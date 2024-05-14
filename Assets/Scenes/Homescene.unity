@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2021,14 +2021,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 4860157488870254038, guid: e29045b898531914d99ea2bb160da433, type: 3}
-  Perfect: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
-  Gold: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
-  Silver: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
-  Bronze: {fileID: 4126144146696241817, guid: 200047b3d4290164497b88886e7e4e0f, type: 3}
+  Perfect: {fileID: 801759908175433503, guid: 16fb1e7fb7f4584429ab293237c90537, type: 3}
+  Gold: {fileID: 8513440023776004020, guid: 7daf73bed98178844b56fde5217f2f76, type: 3}
+  Silver: {fileID: 7786914914025908539, guid: e3de9755069062347af170cd7b1f837b, type: 3}
+  Bronze: {fileID: 4934829502558149617, guid: 05dbbaa49ca2893478c442fa74695b24, type: 3}
   Parent: {fileID: 523221505}
-  Stage1_MAX: 11500
-  Stage2_MAX: 10000
-  Stage3_MAX: 10000
 --- !u!1 &2051948998
 GameObject:
   m_ObjectHideFlags: 0
