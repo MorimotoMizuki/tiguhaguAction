@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Home_Score_Generate : MonoBehaviour
 {
+    //各ステージがパーフェクトであるかを判定する変数を呼び出すための宣言
     public GameManager gameManager;
 
-    //メダルのオブジェクト変数
+    //メダルのプレハブオブジェクトを入れるための変数
     public GameObject Perfect;
     public GameObject Gold;
     public GameObject Silver;
@@ -18,15 +19,10 @@ public class Home_Score_Generate : MonoBehaviour
     //呼び出したスコアを格納する変数
     private int MyScore;
 
-    //各ステージのMAXScoreを格納する変数
-    public int Stage1_MAX = 11500;
-    public int Stage2_MAX = 10000;
-    public int Stage3_MAX = 10000;
-
-    //各ステージがパーフェクトでクリアしたか判定するフラグ
-    //private bool Stage1_Perfect_flag = false;
-    //private bool Stage2_Perfect_flag = false;
-    //private bool Stage3_Perfect_flag = false;
+    //各ステージのMAXScore設定
+    private int Stage1_MAX = 11500;
+    private int Stage2_MAX = 10000;
+    private int Stage3_MAX = 10000;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +33,7 @@ public class Home_Score_Generate : MonoBehaviour
 
         if (gameManager.stage1_P)//ステージ１がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(230f, 410f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(255f, 426f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - 3000)//金
         {
@@ -58,19 +54,19 @@ public class Home_Score_Generate : MonoBehaviour
 
         if (gameManager.stage2_P)//ステージ２がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(400f, 260f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(420f, 286f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage2_MAX && MyScore >= Stage2_MAX - 3000)//金
         {
-            Instantiate(Gold, new Vector3(400f, 260f, 0f), Quaternion.identity, Parent);
+            Instantiate(Gold, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage2_MAX - 3000 && MyScore >= Stage2_MAX - 8000)//銀
         {
-            Instantiate(Silver, new Vector3(400f, 260f, 0f), Quaternion.identity, Parent);
+            Instantiate(Silver, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage2_MAX - 8000 && MyScore >= 0)//銅
         {
-            Instantiate(Bronze, new Vector3(400f, 260f, 0f), Quaternion.identity, Parent);
+            Instantiate(Bronze, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
         }
 
         //ステージ３
@@ -79,19 +75,19 @@ public class Home_Score_Generate : MonoBehaviour
 
         if (gameManager.stage3_P)//ステージ３がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(580f, 115f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(595f, 137f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage3_MAX && MyScore >= Stage3_MAX - 3000)//金
         {
-            Instantiate(Gold, new Vector3(580f, 115f, 0f), Quaternion.identity, Parent);
+            Instantiate(Gold, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage3_MAX - 3000 && MyScore >= Stage3_MAX - 8000)//銀
         {
-            Instantiate(Silver, new Vector3(580f, 115f, 0f), Quaternion.identity, Parent);
+            Instantiate(Silver, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
         }
         else if (MyScore <= Stage3_MAX - 8000 && MyScore >= 0)//銅
         {
-            Instantiate(Bronze, new Vector3(580f, 115f, 0f), Quaternion.identity, Parent);
+            Instantiate(Bronze, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
         }
     }
 
