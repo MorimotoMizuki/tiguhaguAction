@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public float ZPower=0.1f;//前後方向に移動するための力を入れる変数
     public float XPower=0.1f;//横方向に移動するための力を入れる変数
+    public float YPower = 0.1f;//縦方向に移動するための力を入れる変数
 
     public float RightLimit = 4.0f;//右方向限界
     public float LeftLimit = -4.0f;//左方向限界
@@ -13,11 +14,16 @@ public class EnemyController : MonoBehaviour
     public float ForwordLimit = 0.0f;//前方向限界
     public float BackwordLimit = 0.0f;//手前方向限界
 
+    public float TopLimit = 0.0f;//上方向限界
+    public float BottomLimit = 0.0f;//下方向限界
+
     int direc = 1;//向き変更用変数
 
 
-    public bool isX_Axis=false;//X軸方向に移動させたいかどうか
-    public bool isZ_Axis=false;//Z軸方向に移動させたいかどうか
+    public bool isX_Axis = false;//X軸方向に移動させたいかどうか
+    public bool isZ_Axis = false;//Z軸方向に移動させたいかどうか
+    public bool isY_Axis = false;//Y軸方向に移動させたいかどうか
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,9 @@ public class EnemyController : MonoBehaviour
 
         if (isZ_Axis)
             Z_Axis_Move();
+
+        if (isY_Axis)
+            Y_Axis_Move();
 
     }
 
@@ -63,4 +72,17 @@ public class EnemyController : MonoBehaviour
         transform.position += transform.forward * ZPower * direc;
     }
 
+    public void Y_Axis_Move()
+    {
+        if (transform.position.y > TopLimit)//前方向限界に達したら反対に変更
+        {
+            direc = -1;
+        }
+        if (transform.position.y < BottomLimit)//手前方向限界に達したら反対に変更
+        {
+            direc = 1;
+        }
+
+        transform.position += transform.up * YPower * direc;
+    }
 }

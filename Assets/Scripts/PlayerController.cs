@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
-    float forwordpower = 0.01f;//前方向の強制移動の力
+    public float forwordpower = 0.01f;//前方向の強制移動の力
     float widthpower = 0.1f;//横移動の幅
     float jumpforce = 0.2f;//ジャンプ時の力加減
     bool isGround = false;//地面についているかどうか
