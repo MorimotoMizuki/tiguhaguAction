@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class SE : MonoBehaviour
 {
     public bool DontDestroyEnabled = true;
+    public AudioSource se;
 
     // Use this for initialization
     void Start()
@@ -19,5 +21,10 @@ public class SE : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void SEPlay()
+    {
+        se.Play();
     }
 }
