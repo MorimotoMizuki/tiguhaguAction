@@ -43,6 +43,7 @@ public class Clear_pic_Generate : MonoBehaviour
         //ゲームクリアしたら
         if(playerController.isClear == true)
         {
+            Debug.Log(gameManager.stage_num);
             //ステージ１
             //マイスコアにスコアを格納
             if (gameManager.stage_num == 1)//ステージ１だったら
@@ -53,21 +54,25 @@ public class Clear_pic_Generate : MonoBehaviour
                 {
                     Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);//メダル
                     Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Debug.Log("Stage1");
                 }
                 else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - 3000)//金
                 {
                     Instantiate(Gold, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
                     Instantiate(Excellent, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Debug.Log("Stage1");
                 }
                 else if (MyScore <= Stage1_MAX - 3000 && MyScore >= Stage1_MAX - 8000)//銀
                 {
                     Instantiate(Silver, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
                     Instantiate(Great, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Debug.Log("Stage1");
                 }
                 else if (MyScore <= Stage1_MAX - 8000 && MyScore >= 0)//銅
                 {
                     Instantiate(Bronze, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
                     Instantiate(Good, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Debug.Log("Stage1");
                 }
             }
             //ステージ２
