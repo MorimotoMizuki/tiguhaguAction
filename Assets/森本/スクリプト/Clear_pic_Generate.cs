@@ -5,7 +5,7 @@ using UnityEngine;
 public class Clear_pic_Generate : MonoBehaviour
 {
     //各ステージがパーフェクトであるかを判定する変数を呼び出すための宣言
-    public GameManager gameManager;
+    //public GameManager gameManager;
     public PlayerController playerController;
 
     //メダルのプレハブオブジェクトを入れるための変数
@@ -43,14 +43,14 @@ public class Clear_pic_Generate : MonoBehaviour
         //ゲームクリアしたら
         if(playerController.isClear == true)
         {
-            Debug.Log(gameManager.stage_num);
+            Debug.Log(GameManager.stage_num);
             //ステージ１
             //マイスコアにスコアを格納
-            if (gameManager.stage_num == 1)//ステージ１だったら
+            if (GameManager.stage_num == 1)//ステージ１だったら
             {
                 MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-                if (gameManager.stage1_P)//ステージ１がパーフェクト
+                if (GameManager.stage1_P)//ステージ１がパーフェクト
                 {
                     Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);//メダル
                     Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
@@ -77,11 +77,11 @@ public class Clear_pic_Generate : MonoBehaviour
             }
             //ステージ２
             //マイスコアにスコアを格納
-            else if (gameManager.stage_num == 2)//ステージ２だったら
+            else if (GameManager.stage_num == 2)//ステージ２だったら
             {
                 MyScore = PlayerPrefs.GetInt("STAGE2SCORE", -1);
 
-                if (gameManager.stage2_P)//ステージ２がパーフェクト
+                if (GameManager.stage2_P)//ステージ２がパーフェクト
                 {
                     Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
                     Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
@@ -104,11 +104,11 @@ public class Clear_pic_Generate : MonoBehaviour
             }
             //ステージ３
             //マイスコアにスコアを格納
-            else if (gameManager.stage_num == 3)//ステージ３だったら
+            else if (GameManager.stage_num == 3)//ステージ３だったら
             {
                 MyScore = PlayerPrefs.GetInt("STAGE3SCORE", -1);
 
-                if (gameManager.stage3_P)//ステージ３がパーフェクト
+                if (GameManager.stage3_P)//ステージ３がパーフェクト
                 {
                     Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
                     Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉

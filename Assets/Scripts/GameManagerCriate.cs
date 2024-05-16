@@ -15,6 +15,7 @@ public class GameManagerCriate : MonoBehaviour
         if (Loaded) return;
 
         Loaded = true;
+        
 
         //プレハブをインスタンス化して、DontDestroyOnLoad
         foreach (var prefab in gameManagerPrefabs)

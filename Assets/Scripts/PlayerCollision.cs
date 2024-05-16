@@ -32,23 +32,23 @@ public class PlayerCollision : MonoBehaviour
             playerController.isClear = true;
 
             //スコアを保存かつParfectかどうか見る
-            if (gameManager.stage_num == 1)
+            if (GameManager.stage_num == 1)
             {
                 PlayerPrefs.SetInt("STAGE1SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage1MAXscore && playerController.playerHP == playerHPMAX)
-                    gameManager.stage1_P = true;
+                    GameManager.stage1_P = true;
             }
-            if (gameManager.stage_num == 2)
+            if (GameManager.stage_num == 2)
             {
                 PlayerPrefs.SetInt("STAGE2SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage2MAXscore && playerController.playerHP == playerHPMAX)
-                    gameManager.stage2_P = true;
+                    GameManager.stage2_P = true;
             } 
-            if (gameManager.stage_num == 3)
+            if (GameManager.stage_num == 3)
             {
                 PlayerPrefs.SetInt("STAGE3SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage3MAXscore && playerController.playerHP == playerHPMAX)
-                    gameManager.stage3_P = true;
+                    GameManager.stage3_P = true;
             }
         }
         if(other.gameObject.tag == "Gold")//金コイン

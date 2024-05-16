@@ -5,7 +5,7 @@ using UnityEngine;
 public class Home_Score_Generate : MonoBehaviour
 {
     //各ステージがパーフェクトであるかを判定する変数を呼び出すための宣言
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     //メダルのプレハブオブジェクトを入れるための変数
     public GameObject Perfect;
@@ -31,7 +31,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-        if (gameManager.stage1_P)//ステージ１がパーフェクト
+        if (GameManager.stage1_P)//ステージ１がパーフェクト
         {
             Instantiate(Perfect, new Vector3(255f, 426f, 0f), Quaternion.identity, Parent);
         }
@@ -52,7 +52,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE2SCORE", -1);
 
-        if (gameManager.stage2_P)//ステージ２がパーフェクト
+        if (GameManager.stage2_P)//ステージ２がパーフェクト
         {
             Instantiate(Perfect, new Vector3(420f, 286f, 0f), Quaternion.identity, Parent);
         }
@@ -73,7 +73,7 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE3SCORE", -1);
 
-        if (gameManager.stage3_P)//ステージ３がパーフェクト
+        if (GameManager.stage3_P)//ステージ３がパーフェクト
         {
             Instantiate(Perfect, new Vector3(595f, 137f, 0f), Quaternion.identity, Parent);
         }
