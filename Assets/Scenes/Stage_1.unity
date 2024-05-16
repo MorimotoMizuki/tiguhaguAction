@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -592,7 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b54c46c6e1bb2b4b8052d3e6e8f5f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 4860157488870254038, guid: e29045b898531914d99ea2bb160da433, type: 3}
   playerController: {fileID: 1828509036}
   Perfect: {fileID: 801759908175433503, guid: 16fb1e7fb7f4584429ab293237c90537, type: 3}
   Gold: {fileID: 8513440023776004020, guid: 7daf73bed98178844b56fde5217f2f76, type: 3}
@@ -602,6 +601,10 @@ MonoBehaviour:
   Excellent: {fileID: 1407984742818061389, guid: afac47455ab33354eb153ca2d0f087f3, type: 3}
   Great: {fileID: 8593597433209788629, guid: 2fd8da7e79cee4347ae82b57a67b8150, type: 3}
   Good: {fileID: 7437606474624627400, guid: 48b3ccb9f6f3a7743bfbb335034c3d3c, type: 3}
+  Hanabi_Yellow: {fileID: 7377695841035753141, guid: 7b8e384d22572a8428c83ad9908afb63, type: 3}
+  Hanabi_Green: {fileID: 3005800029784485915, guid: b29ae80999f4df74ab023603ac8bd73b, type: 3}
+  Hanabi_Blue: {fileID: 4267156252688063305, guid: 239ed2ef3b40bcc42a06f7d1e92cf971, type: 3}
+  Hanabi_Red: {fileID: 6875122397568833291, guid: 10fa52b9ea9de224d8e6f61937804c1b, type: 3}
   Parent: {fileID: 92201217}
 --- !u!1 &470945296
 GameObject:
@@ -936,7 +939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689003098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 180}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,7 +1211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -84.5, y: 29.1}
+  m_AnchoredPosition: {x: -84.5, y: 29.100006}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932002651
@@ -1318,6 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 0
+  sceneName: 
 --- !u!1 &994068146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2290,7 @@ MonoBehaviour:
   gameclearover: {fileID: 1828509038}
   hpbarManager: {fileID: 1524866125}
   gameManager: {fileID: 4860157488870254038, guid: e29045b898531914d99ea2bb160da433, type: 3}
+  clear_pic_generate: {fileID: 334680871}
   isBlink: 0
   scoreManager: {fileID: 1311053719}
   stage1MAXscore: 11500
@@ -2528,7 +2533,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2102313718}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
