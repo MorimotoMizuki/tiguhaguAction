@@ -179,23 +179,107 @@ public class Clear_pic_Generate : MonoBehaviour
 
                 if (GameManager.stage2_P)//ステージ２がパーフェクト
                 {
-                    Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Perfect, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);//メダル
+                    Instantiate(Congratulations, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 10 5
+                    for (int i = 0; i < 10; i++, interval += 5)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage2_MAX && MyScore >= Stage2_MAX - 3000)//金
                 {
-                    Instantiate(Gold, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Excellent, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Gold, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Excellent, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 6 8
+                    for (int i = 0; i < 6; i++, interval += 8)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage2_MAX - 3000 && MyScore >= Stage2_MAX - 8000)//銀
                 {
-                    Instantiate(Silver, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Great, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Silver, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Great, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 4 14
+                    for (int i = 0; i < 4; i++, interval += 14)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage2_MAX - 8000 && MyScore >= 0)//銅
                 {
-                    Instantiate(Bronze, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Good, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Bronze, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Good, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 3 20
+                    for (int i = 0; i < 3; i++, interval += 20)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
             }
             //ステージ３
@@ -206,23 +290,107 @@ public class Clear_pic_Generate : MonoBehaviour
 
                 if (GameManager.stage3_P)//ステージ３がパーフェクト
                 {
-                    Instantiate(Perfect, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Congratulations, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Perfect, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);//メダル
+                    Instantiate(Congratulations, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 10 5
+                    for (int i = 0; i < 10; i++, interval += 5)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage3_MAX && MyScore >= Stage3_MAX - 3000)//金
                 {
-                    Instantiate(Gold, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Excellent, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Gold, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Excellent, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 6 8
+                    for (int i = 0; i < 6; i++, interval += 8)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage3_MAX - 3000 && MyScore >= Stage3_MAX - 8000)//銀
                 {
-                    Instantiate(Silver, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Great, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Silver, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Great, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 4 14
+                    for (int i = 0; i < 4; i++, interval += 14)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
                 else if (MyScore <= Stage3_MAX - 8000 && MyScore >= 0)//銅
                 {
-                    Instantiate(Bronze, new Vector3(470f, 160f, 0f), Quaternion.identity, Parent);
-                    Instantiate(Good, new Vector3(470f, 400f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Bronze, new Vector3(371f, 202f, 0f), Quaternion.identity, Parent);
+                    Instantiate(Good, new Vector3(377.8f - 15f, 316.5f, 0f), Quaternion.identity, Parent);//ゲーミング誉め言葉
+
+                    //花火 3 20
+                    for (int i = 0; i < 3; i++, interval += 20)
+                    {
+                        random_collar = Random.Range(1, 5);//1～4でランダム
+                        switch (random_collar)
+                        {
+                            case 1:
+                                Instantiate(Hanabi_Yellow, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 2:
+                                Instantiate(Hanabi_Blue, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 3:
+                                Instantiate(Hanabi_Red, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                            case 4:
+                                Instantiate(Hanabi_Green, new Vector3(playerController.transform.position.x + interval, playerController.transform.position.y, playerController.transform.position.z + 30f), Quaternion.identity);
+                                break;
+                        }
+                    }
                 }
             }
 
