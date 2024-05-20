@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+ main
+
 
   - Ground
   - Obstacle
@@ -11,6 +13,7 @@ TagManager:
   - Gold
   - Silver
   - Copper
+ main
  main
   layers:
   - Default
