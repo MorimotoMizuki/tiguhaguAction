@@ -19,13 +19,18 @@ public class PlayerCollision : MonoBehaviour
     public int stage3MAXscore;
     public int playerHPMAX;
 
+    private Collider otherCol;
+
     public void PCollision(Collider other)//ÚG‚ÉŒÄ‚Ño‚³‚ê‚é
     {
+        otherCol = null;
         if (other.gameObject.tag == "Obstacle")//áŠQ•¨
         {
             playerController.playerHP--;
             hpbarManager.HPdamage();
             isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
         }
         if(other.gameObject.tag=="Clear")//ƒNƒŠƒAWall
         {

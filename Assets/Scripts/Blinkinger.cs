@@ -5,7 +5,7 @@ using UnityEngine;
 public class Blinkinger : MonoBehaviour
 {
     // “_–Å‚³‚¹‚é‘ÎÛ
-    [SerializeField] private Renderer _target;
+    [SerializeField] private Renderer[] _target;
     // “_–ÅŽüŠú[s]
     [SerializeField] private float _cycle = 0.5f;
 
@@ -37,14 +37,22 @@ public class Blinkinger : MonoBehaviour
             // 0`cycle‚Ì”ÍˆÍ‚Ì’l‚ª“¾‚ç‚ê‚é
             var repeatValue = Mathf.Repeat((float)_time, _cycle);
 
-            // “à•”Žžtime‚É‚¨‚¯‚é–¾–Åó‘Ô‚ð”½‰f
-            _target.enabled = repeatValue >= _cycle * 0.2f;
+            for(int i=0;i<_target.Length;i++)
+            {
+                // “à•”Žžtime‚É‚¨‚¯‚é–¾–Åó‘Ô‚ð”½‰f
+                _target[i].enabled = repeatValue >= _cycle * 0.2f;
+            }
+            
             
         }
         if(_time>1f)
         {
             playerCollision.isBlink = false;
-            _target.enabled = true;
+            for (int i = 0; i < _target.Length; i++)
+            {
+                // “à•”Žžtime‚É‚¨‚¯‚é–¾–Åó‘Ô‚ð”½‰f
+                _target[i].enabled = true;
+            }
         }
     }
 }

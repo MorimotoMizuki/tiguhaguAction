@@ -4,48 +4,72 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float forwordpower = 0.01f;//‘O•ûŒü‚Ì‹­§ˆÚ“®‚Ì—Í
-    float widthpower = 0.1f;//‰¡ˆÚ“®‚Ì•
-    float jumpforce = 0.2f;//ƒWƒƒƒ“ƒv‚Ì—Í‰ÁŒ¸
-    bool isGround = false;//’n–Ê‚É‚Â‚¢‚Ä‚¢‚é‚©‚Ç‚¤‚©
-    public int playerHP=10;//ƒvƒŒƒCƒ„[‚ÌHP
+    private CharacterController characterController;//CharacterControllerï¿½Ïï¿½
+    private Animator animator;                      //Animatorï¿½Ïï¿½
+    private Vector3 vector;                         //ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½ğ“®‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½Vector3ï¿½Ïï¿½
 
-    float times=1.00001f;//™X‚É‰Á‘¬‚·‚é‚½‚ß‚Ì
+    //public Rigidbody rb;
+    public float forwordpower = 0.01f;//ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ì‹ï¿½ï¿½ï¿½ï¿½Ú“ï¿½ï¿½Ì—ï¿½
+    float widthpower = 0.1f;//ï¿½ï¿½ï¿½Ú“ï¿½ï¿½Ì•ï¿½
+    float jumpforce = 5.0f;//ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ì—Í‰ï¿½ï¿½ï¿½
+    public bool isGround = true;//ï¿½nï¿½Ê‚É‚Â‚ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
+    public int playerHP=10;//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½HP
+
+    float times=1.00001f;//ï¿½ï¿½ï¿½Xï¿½É‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚ï¿½
 
     public PlayerCollision playerCollision;
     public Blinkinger blinkinger;
 
-    //public bool isBlink = false;//“_–Å‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
-    public bool isClear = false;//ƒNƒŠƒA‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
-    public bool isOver = false;//ƒQ[ƒ€ƒI[ƒo[‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+    //public bool isBlink = false;//ï¿½_ï¿½Å‚ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
+    public bool isClear = false;//ï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
+    public bool isOver = false;//ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Transform transform = this.transform;           //transformï¿½ï¿½ï¿½æ“¾
+        Vector3 localAngle = transform.localEulerAngles;//ï¿½ï¿½ï¿½[ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½î€ï¿½ÉAï¿½ï¿½]ï¿½ï¿½ï¿½æ“¾
+        localAngle.y = 0.0f;                            //ï¿½ï¿½ï¿½[ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½î€ï¿½ÉAyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½0ï¿½xï¿½É•ÏX
+        transform.localEulerAngles = localAngle;        //ï¿½ï¿½]ï¿½pï¿½xï¿½ï¿½İ’ï¿½
 
-        if (Input.GetKeyDown(KeyCode.Space)&&-5.0f<transform.position.x&&!isClear)//¶•ûŒü‚ÉˆÚ“®
+        characterController.Move(this.gameObject.transform.forward * forwordpower);
+        animator.SetBool("Run", true);//ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½^ï¿½[ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½[Runï¿½ï¿½trueï¿½É‚ï¿½ï¿½ï¿½
+
+        if (Input.GetKeyDown(KeyCode.Space)&&-5.0f<transform.position.x&&!isClear)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
         {
-            transform.position -= widthpower * transform.right;
+            //transform.position -= widthpower * transform.right;
+            characterController.Move(this.gameObject.transform.right * -1 * widthpower);
         }
-        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<5.0f&&!isClear)//‰E•ûŒü‚ÉˆÚ“®
+        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<5.0f&&!isClear)//ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
         {
-            transform.position += widthpower * transform.right;
+            //transform.position += widthpower * transform.right;
+            characterController.Move(this.gameObject.transform.right * widthpower);
         }
 
-        if(Input.GetMouseButton(2)&&Input.GetKey(KeyCode.Return)&isGround&&!isClear)//ƒWƒƒƒ“ƒv
+        if(Input.GetMouseButton(2)&&Input.GetKey(KeyCode.Return)&&isGround&&!isClear)//ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½v
         {
-            transform.position += jumpforce * transform.up;
+            //transform.position += jumpforce * transform.up;
+            vector.y = jumpforce;
+            animator.SetBool("Jump", true);
+            isGround = false;
+            Debug.Log("jump");
         }
-
+        else
+        {
+            //ï¿½dï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            vector.y += Physics.gravity.y * Time.deltaTime;
+        }
+       
         forwordpower *= times;
 
         if(isClear||isOver)
@@ -53,30 +77,35 @@ public class PlayerController : MonoBehaviour
             forwordpower = 0.0f;
         }
 
-        transform.position += forwordpower * transform.forward;
-        //rb.velocity = Vector3.forward * 2.0f;//‘O•ûŒü‚É‚QN‚Ì—Í‚ÅˆÚ“®‚·‚é
+        //ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ğ“®‚ï¿½ï¿½ï¿½
+        characterController.Move(vector * Time.deltaTime);
+
+        //transform.position += forwordpower * transform.forward;
+        //rb.velocity = Vector3.forward * 2.0f;//ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½É‚QNï¿½Ì—Í‚ÅˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")//’n–Ê‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©
-        {
-            isGround = true;
-        }
-
-        
-    }
-    private void OnCollisionExit(Collision collision)//ƒRƒŠƒWƒ‡ƒ“‚©‚ç—£‚ê‚Ä‚¢‚é’n–Ê‚ÆÚG‚µ‚Ä‚¢‚È‚¢
+    private void OnCollisionExit(Collision collision)//ï¿½Rï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç—£ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½nï¿½Ê‚ÆÚGï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½
     {
         isGround = false;
+        Debug.Log("isground");
+
     }
 
-    private void OnTriggerEnter(Collider other)//Trigger‚ÉÚG‚µ‚½‚Æ‚«
+    private void OnTriggerEnter(Collider other)//Triggerï¿½ÉÚGï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
     {
+        
         playerCollision.PCollision(other);
         //isBlink = true;
         blinkinger._time = 0.0f;
-        
-        
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")//ï¿½nï¿½Ê‚ÆÚGï¿½ï¿½ï¿½Ä‚é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
+        {
+            isGround = true;
+            animator.SetBool("Jump", false);
+            Debug.Log("Ground");
+        }
     }
 }
