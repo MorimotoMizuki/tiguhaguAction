@@ -4,12 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Obstacle
-  - Clear
-  - Gold
-  - Silver
-  - Copper
+  - Object
   layers:
   - Default
   - TransparentFX
