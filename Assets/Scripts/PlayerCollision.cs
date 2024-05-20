@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public Gameclearover gameclearover;
     public HPbarManager hpbarManager;
     public GameManager gameManager;
+    public Clear_pic_Generate clear_pic_generate;
 
     public bool isBlink = false;//点滅しているかどうか
     public ScoreManager scoreManager;
@@ -50,6 +51,9 @@ public class PlayerCollision : MonoBehaviour
                 if (scoreManager.score_num == stage3MAXscore && playerController.playerHP == playerHPMAX)
                     GameManager.stage3_P = true;
             }
+
+            //クリアした時の演出
+            clear_pic_generate.ClearDisplay();
         }
         if(other.gameObject.tag == "Gold")//金コイン
         {
