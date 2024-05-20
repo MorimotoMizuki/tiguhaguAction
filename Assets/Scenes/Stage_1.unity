@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -573,8 +573,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334680869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13, y: -17, z: -10.318187}
-  m_LocalScale: {x: 0.8667389, y: 0.8667389, z: 0.8667389}
+  m_LocalPosition: {x: 0, y: 0, z: -10.318187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 92201217}
@@ -601,6 +601,7 @@ MonoBehaviour:
   Excellent: {fileID: 1407984742818061389, guid: afac47455ab33354eb153ca2d0f087f3, type: 3}
   Great: {fileID: 8593597433209788629, guid: 2fd8da7e79cee4347ae82b57a67b8150, type: 3}
   Good: {fileID: 7437606474624627400, guid: 48b3ccb9f6f3a7743bfbb335034c3d3c, type: 3}
+  OBJ_T: {fileID: 334680870}
   Hanabi_Yellow: {fileID: 7377695841035753141, guid: 7b8e384d22572a8428c83ad9908afb63, type: 3}
   Hanabi_Green: {fileID: 3005800029784485915, guid: b29ae80999f4df74ab023603ac8bd73b, type: 3}
   Hanabi_Blue: {fileID: 4267156252688063305, guid: 239ed2ef3b40bcc42a06f7d1e92cf971, type: 3}
@@ -1321,7 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 0
-  sceneName: 
+  sceneName: Homescene
 --- !u!1 &994068146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2725,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141046579}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 222efafa535218940a7d5f261889ae7b, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: f54f7bdf985b8b644b20f1de213def71, type: 2}
   m_EnableTreeColliders: 1
