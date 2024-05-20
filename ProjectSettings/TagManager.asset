@@ -4,12 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+
   - Ground
   - Obstacle
   - Clear
   - Gold
   - Silver
   - Copper
+ main
   layers:
   - Default
   - TransparentFX
