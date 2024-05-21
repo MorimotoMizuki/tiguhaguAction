@@ -45,7 +45,7 @@ public class Blinkinger : MonoBehaviour
             
             
         }
-        if(_time>1f)
+        if(_time>0.5f)
         {
             playerCollision.isBlink = false;
             for (int i = 0; i < _target.Length; i++)

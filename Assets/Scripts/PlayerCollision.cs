@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
     public HPbarManager hpbarManager;
     public GameManager gameManager;
     public Clear_pic_Generate clear_pic_generate;
+    public StageSEManager stageSEManager;
 
     public bool isBlink = false;//点滅しているかどうか
     public ScoreManager scoreManager;
@@ -31,11 +32,13 @@ public class PlayerCollision : MonoBehaviour
             isBlink = true;
             otherCol = other.gameObject.GetComponent<MeshCollider>();
             otherCol.enabled = false;
+            stageSEManager.DamageSE();
         }
         if(other.gameObject.tag=="Clear")//クリアWall
         {
             gameclearover.GameClearobj.SetActive(true);
             playerController.isClear = true;
+            stageSEManager.ClearSE();
 
             //スコアを保存かつParfectかどうか見る
             if (GameManager.stage_num == 1)
@@ -64,16 +67,19 @@ public class PlayerCollision : MonoBehaviour
         {
             scoreManager.score_num += 3000;
             Destroy(other.gameObject);
+            stageSEManager.CoinSE();
         }
         if(other.gameObject.tag == "Silver")//銀コイン取得時
         {
             scoreManager.score_num += 1500;
             Destroy(other.gameObject);
+            stageSEManager.CoinSE();
         }
         if(other.gameObject.tag == "Copper")//銅コイン取得時
         {
             scoreManager.score_num += 1000;
             Destroy(other.gameObject);
+            stageSEManager.CoinSE();
         }
     }
 }
