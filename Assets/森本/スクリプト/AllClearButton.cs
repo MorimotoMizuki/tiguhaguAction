@@ -9,7 +9,7 @@ public class AllClearButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnButton", 5.0f);
+        Invoke("SpawnButton", 10.0f);
     }
 
     // Update is called once per frame
