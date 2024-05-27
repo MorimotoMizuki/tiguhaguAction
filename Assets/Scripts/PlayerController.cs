@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour
 
     //public Rigidbody rb;
     public float forwordpower = 0.01f;//�O�����̋����ړ��̗�
-    float widthpower = 0.1f;//���ړ��̕�
-    float jumpforce = 5.0f;//�W�����v���̗͉���
+    float widthpower = 0.2f;//���ړ��̕�
+    float jumpforce = 3.5f;//�W�����v���̗͉���
     public bool isGround = true;//�n�ʂɂ��Ă��邩�ǂ���
     public int playerHP=10;//�v���C���[��HP
 
-    float times=1.00001f;//���X�ɉ������邽�߂�
+    float times=1.0001f;//���X�ɉ������邽�߂�
 
     public PlayerCollision playerCollision;
     public Blinkinger blinkinger;
@@ -32,56 +32,63 @@ public class PlayerController : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        isClear = false;
+        isOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Transform transform = this.transform;           //transform���擾
-        Vector3 localAngle = transform.localEulerAngles;//���[�J�����W����ɁA��]���擾
-        localAngle.y = 0.0f;                            //���[�J�����W����ɁAy�������ɂ�����]��0�x�ɕύX
-        transform.localEulerAngles = localAngle;        //��]�p�x��ݒ�
-
-        characterController.Move(this.gameObject.transform.forward * forwordpower);
-        animator.SetBool("Run", true);//�A�j���[�^�[�p�����[�^�[Run��true�ɂ���
-
-        if (Input.GetKeyDown(KeyCode.Space)&&-5.0f<transform.position.x&&!isClear)//�������Ɉړ�
+        if (StartButtonSC.isStart)
         {
-            //transform.position -= widthpower * transform.right;
-            characterController.Move(this.gameObject.transform.right * -1 * widthpower);
-        }
-        if((Input.GetMouseButtonDown(0)||Input.GetMouseButtonDown(1))&&transform.position.x<5.0f&&!isClear)//�E�����Ɉړ�
-        {
-            //transform.position += widthpower * transform.right;
-            characterController.Move(this.gameObject.transform.right * widthpower);
-        }
+            Transform transform = this.transform;           //transform���擾
+            Vector3 localAngle = transform.localEulerAngles;//���[�J�����W����ɁA��]���擾
+            localAngle.y = 0.0f;                            //���[�J�����W����ɁAy�������ɂ�����]��0�x�ɕύX
+            transform.localEulerAngles = localAngle;        //��]�p�x��ݒ�
 
-        if(Input.GetMouseButton(2)&&Input.GetKey(KeyCode.Return)&&isGround&&!isClear)//�W�����v
-        {
-            //transform.position += jumpforce * transform.up;
-            vector.y = jumpforce;
-            animator.SetBool("Jump", true);
-            isGround = false;
-            Debug.Log("jump");
-        }
-        else
-        {
-            //�d�͂�������
-            vector.y += Physics.gravity.y * Time.deltaTime;
-        }
-       
-        forwordpower *= times;
+            characterController.Move(this.gameObject.transform.forward * forwordpower);
+            animator.SetBool("Run", true);//�A�j���[�^�[�p�����[�^�[Run��true�ɂ���
 
-        if(isClear||isOver)
-        {
-            forwordpower = 0.0f;
+            if (Input.GetKeyDown(KeyCode.Space) && -5.0f < transform.position.x && !isClear)//�������Ɉړ�
+            {
+                //transform.position -= widthpower * transform.right;
+                characterController.Move(this.gameObject.transform.right * -1 * widthpower);
+            }
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && transform.position.x < 5.0f && !isClear)//�E�����Ɉړ�
+            {
+                //transform.position += widthpower * transform.right;
+                characterController.Move(this.gameObject.transform.right * widthpower);
+            }
+
+            if (Input.GetMouseButton(2) && Input.GetKey(KeyCode.Return) && isGround && !isClear)//�W�����v
+            {
+                //transform.position += jumpforce * transform.up;
+                vector.y = jumpforce;
+                animator.SetBool("Jump", true);
+                isGround = false;
+            }
+            else
+            {
+                //�d�͂�������
+                vector.y += Physics.gravity.y * Time.deltaTime;
+            }
+
+            forwordpower *= times;
+
+            if (isClear)
+            {
+                forwordpower = 0.0f;
+                localAngle.y = 180.0f;
+                transform.localEulerAngles = localAngle;
+                animator.SetBool("Dance", true);
+            }
+
+            //�L�����N�^�[�𓮂���
+            characterController.Move(vector * Time.deltaTime);
+
+            //transform.position += forwordpower * transform.forward;
+            //rb.velocity = Vector3.forward * 2.0f;//�O�����ɂQN�̗͂ňړ�����
         }
-
-        //�L�����N�^�[�𓮂���
-        characterController.Move(vector * Time.deltaTime);
-
-        //transform.position += forwordpower * transform.forward;
-        //rb.velocity = Vector3.forward * 2.0f;//�O�����ɂQN�̗͂ňړ�����
     }
 
     private void OnCollisionExit(Collision collision)//�R���W�������痣��Ă��遁�n�ʂƐڐG���Ă��Ȃ�

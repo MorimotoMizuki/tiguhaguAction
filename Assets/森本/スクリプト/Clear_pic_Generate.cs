@@ -7,6 +7,7 @@ public class Clear_pic_Generate : MonoBehaviour
     //各ステージがパーフェクトであるかを判定する変数を呼び出すための宣言
     //public GameManager gameManager;
     public PlayerController playerController;
+    public PlayerCollision playerCollision;
 
     //メダルのプレハブオブジェクトを入れるための変数
     public GameObject Perfect;
@@ -40,7 +41,7 @@ public class Clear_pic_Generate : MonoBehaviour
     private int MyScore;
 
     //各ステージのMAXScore設定
-    private int Stage1_MAX = 3500;
+    private int Stage1_MAX = 11500;
     private int Stage2_MAX = 10000;
     private int Stage3_MAX = 10000;
 
@@ -51,6 +52,9 @@ public class Clear_pic_Generate : MonoBehaviour
     void Start()
     {
         once_clear = true;
+        Stage1_MAX = playerCollision.stage1MAXscore;
+        Stage2_MAX = playerCollision.stage2MAXscore;
+        Stage3_MAX = playerCollision.stage3MAXscore;
     }
 
     // Update is called once per frame

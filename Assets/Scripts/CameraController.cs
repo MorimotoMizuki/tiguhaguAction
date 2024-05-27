@@ -19,14 +19,17 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.velocity = Vector3.forward * 2.0f;//‘O•ûŒü‚É‚QN‚Ì—Í‚ÅˆÚ“®‚·‚é
-        transform.position += playerController.forwordpower * transform.forward;
-
-        playerController.forwordpower *= times;
-
-        if(playerController.isClear|| playerController.isOver)
+        if (StartButtonSC.isStart)
         {
-            playerController.forwordpower = 0.0f;
+            //rb.velocity = Vector3.forward * 2.0f;//‘O•ûŒü‚É‚QN‚Ì—Í‚ÅˆÚ“®‚·‚é
+            transform.position += playerController.forwordpower * transform.forward;
+
+            playerController.forwordpower *= times;
+
+            if (playerController.isClear || playerController.isOver)
+            {
+                playerController.forwordpower = 0.0f;
+            }
         }
     }
 }
