@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public bool isClear = false;//�N���A���Ă��邩�ǂ���
     public bool isOver = false;//�Q�[���I�[�o�[���Ă��邩�ǂ���
 
-
+    public Vector3 playerpos;//プレイヤーの現在地保存用
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         isClear = false;
         isOver = false;
-    }
+}
 
     // Update is called once per frame
     void Update()
@@ -49,12 +49,12 @@ public class PlayerController : MonoBehaviour
             characterController.Move(this.gameObject.transform.forward * forwordpower);
             animator.SetBool("Run", true);//�A�j���[�^�[�p�����[�^�[Run��true�ɂ���
 
-            if (Input.GetKeyDown(KeyCode.Space) && -5.0f < transform.position.x && !isClear)//�������Ɉړ�
+            if (Input.GetKeyDown(KeyCode.Space) && -15.0f < transform.position.x && !isClear)//�������Ɉړ�
             {
                 //transform.position -= widthpower * transform.right;
                 characterController.Move(this.gameObject.transform.right * -1 * widthpower);
             }
-            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && transform.position.x < 5.0f && !isClear)//�E�����Ɉړ�
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && transform.position.x < 15.0f && !isClear)//�E�����Ɉړ�
             {
                 //transform.position += widthpower * transform.right;
                 characterController.Move(this.gameObject.transform.right * widthpower);
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
             //transform.position += forwordpower * transform.forward;
             //rb.velocity = Vector3.forward * 2.0f;//�O�����ɂQN�̗͂ňړ�����
         }
+        playerpos = this.transform.position;
     }
 
     private void OnCollisionExit(Collision collision)//�R���W�������痣��Ă��遁�n�ʂƐڐG���Ă��Ȃ�
