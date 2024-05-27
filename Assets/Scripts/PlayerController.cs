@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody rb;
     public float forwordpower = 0.01f;//�O�����̋����ړ��̗�
     float widthpower = 0.2f;//���ړ��̕�
-    float jumpforce = 3.0f;//�W�����v���̗͉���
+    float jumpforce = 3.5f;//�W�����v���̗͉���
     public bool isGround = true;//�n�ʂɂ��Ă��邩�ǂ���
     public int playerHP=10;//�v���C���[��HP
 
-    float times=1.00001f;//���X�ɉ������邽�߂�
+    float times=1.0001f;//���X�ɉ������邽�߂�
 
     public PlayerCollision playerCollision;
     public Blinkinger blinkinger;
