@@ -34,7 +34,16 @@ public class PlayerCollision : MonoBehaviour
             otherCol.enabled = false;
             stageSEManager.DamageSE();
         }
-        if(other.gameObject.tag=="Clear")//クリアWall
+        if (other.gameObject.tag == "HeelPotion")//回復ポーション
+        {
+            playerController.playerHP += 5;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            //stageSEManager.DamageSE();
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag=="Clear")//クリアWall
         {
             gameclearover.GameClearobj.SetActive(true);
             playerController.isClear = true;
