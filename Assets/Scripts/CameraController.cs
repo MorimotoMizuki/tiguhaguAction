@@ -17,17 +17,17 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (StartButtonSC.isStart)
         {
             //rb.velocity = Vector3.forward * 2.0f;//前方向に２Nの力で移動する
             transform.position += playerController.forwordpower * transform.forward;//プレイヤーの前進スピードに合わせて移動する
-            if(playerController.playerpos.x<-5)
+            if(playerController.playerpos.x< -3)
             {
                 transform.position = new Vector3(playerController.playerpos.x, transform.position.y, transform.position.z);
             }
-            else if (playerController.playerpos.x > 5)
+            else if (playerController.playerpos.x > 3)
             {
                 transform.position = new Vector3(playerController.playerpos.x , transform.position.y, transform.position.z);
             }
