@@ -7,6 +7,9 @@ public class Gameclearover : MonoBehaviour
     public GameObject GameClearobj;
     public GameObject Gameoverobj;
 
+    public AudioSource BGM;
+    public AudioSource GameOverBGM;
+
     public PlayerController playerController;
 
     // Start is called before the first frame update
@@ -21,6 +24,9 @@ public class Gameclearover : MonoBehaviour
     {
         if(playerController.playerHP==0)
         {
+            BGM.volume = 0;
+            GameOverBGM.Play();
+            Debug.Log(GameOverBGM.volume);
             Gameoverobj.SetActive(true);
             playerController.isOver = true;
         }

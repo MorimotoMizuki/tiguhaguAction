@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9050420591533080617
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 865cd86e2dbb5f6408fbf776ab38f2c5
+  m_EffectName: Attenuation
+  m_MixLevel: 75e55159f742f3244951d5fd8d9dda12
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-8749910362863218156
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -52,6 +66,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-5731090585694143667
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameOver
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9d47df261bd5f11408517af242f9f871
+  m_Children: []
+  m_Volume: defba70971ef5044b96d03b7e4323b44
+  m_Pitch: 385fdbbe7c1a6e445baddb40eb79fecf
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -9050420591533080617}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-2157711162183580979
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -165,6 +198,7 @@ AudioMixerController:
     - 44e49c6930d980c4c937bbf333a488d8
     - a1e743441d433254484085088f3e20e7
     - 79c36509adb54ba47801252fe921192a
+    - 9d47df261bd5f11408517af242f9f871
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -181,6 +215,7 @@ AudioMixerGroupController:
   - {fileID: -8749910362863218156}
   - {fileID: -8269433968133423000}
   - {fileID: -1884945174289098215}
+  - {fileID: -5731090585694143667}
   - {fileID: 8401460466309679456}
   m_Volume: 967f7921dc03cfd45a9cd30fe4d298f5
   m_Pitch: 0a07c9cbf99694541a8a10138c0db2f7
