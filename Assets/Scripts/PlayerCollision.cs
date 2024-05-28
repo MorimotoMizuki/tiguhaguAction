@@ -36,10 +36,19 @@ public class PlayerCollision : MonoBehaviour
         }
         if (other.gameObject.tag == "HeelPotion")//‰ñ•œƒ|[ƒVƒ‡ƒ“
         {
-            playerController.playerHP += 5;
-            hpbarManager.HPdamage();
-            isBlink = true;
-            //stageSEManager.DamageSE();
+            if(playerController.playerHP != playerHPMAX)
+            {
+                if (playerHPMAX - playerController.playerHP > 5)
+                {
+                    playerController.playerHP += 5;
+                }
+                else if(playerHPMAX - playerController.playerHP < 5)
+                {
+                    playerController.playerHP += playerHPMAX - playerController.playerHP;
+                }
+                hpbarManager.HPdamage();
+                stageSEManager.HeelSE();
+            }
             Destroy(other.gameObject);
         }
 
