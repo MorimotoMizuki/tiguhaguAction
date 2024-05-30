@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class BGMManager : MonoBehaviour
 {
+    public StageSEManager semanager;
+
     AudioSource audioSource;
-    public AudioClip[] audioClips;
     public PlayerController playerController;
     bool isPlay = false;
     // Start is called before the first frame update
@@ -24,6 +25,13 @@ public class BGMManager : MonoBehaviour
             audioSource.Stop();
             isPlay = true;
         }
-        
+        if(playerController.isOver && !isPlay)
+        {
+            audioSource.Stop();
+            isPlay = true;
+            //ゲームオーバーのSEを再生
+            semanager.OverSE(); 
+        }
+
     }
 }
