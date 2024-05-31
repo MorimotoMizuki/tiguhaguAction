@@ -202,7 +202,7 @@ MonoBehaviour:
   pause: {fileID: 1252875696}
   forwordpower: 0.1
   isGround: 1
-  playerHP: 1
+  playerHP: 10
   playerCollision: {fileID: 37448034}
   blinkinger: {fileID: 37448036}
   isClear: 0
