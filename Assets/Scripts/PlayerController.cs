@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;//CharacterController�ϐ�
     private Animator animator;                      //Animator�ϐ�
     private Vector3 vector;                         //�L�����N�^�[�R���g���[���[�𓮂������߂�Vector3�ϐ�
+    public Pause pause;//ポーズかどうか判定する
 
     //public Rigidbody rb;
     public float forwordpower = 0.01f;//�O�����̋����ړ��̗�
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()//入力、判定はこっちで行うこと
     {
-        if (StartButtonSC.isStart)
+        if (StartButtonSC.isStart && !pause.Pauseflag && !isOver)
         {
 
             if (Input.GetKeyDown(KeyCode.Space) && -15.0f < transform.position.x && !isClear)//�������Ɉړ�
@@ -66,12 +67,6 @@ public class PlayerController : MonoBehaviour
                 vector.y += Physics.gravity.y * Time.deltaTime;
             }
 
-
-
-            
-
-            
-
             //transform.position += forwordpower * transform.forward;
             //rb.velocity = Vector3.forward * 2.0f;//�O�����ɂQN�̗͂ňړ�����
         }
@@ -84,7 +79,7 @@ public class PlayerController : MonoBehaviour
         localAngle.y = 0.0f;                            //Y軸回転を0に強制的に変える
         transform.localEulerAngles = localAngle;        //実際にここで回転を変える
 
-        if (StartButtonSC.isStart)
+        if (StartButtonSC.isStart && !pause.Pauseflag && !isOver)
         {
             characterController.Move(this.gameObject.transform.forward * forwordpower);
             animator.SetBool("Run", true);//アニメーションを基本はRunにする
@@ -92,20 +87,20 @@ public class PlayerController : MonoBehaviour
             //前進運動
             characterController.Move(vector * Time.deltaTime);
 
-            if (isClear)
-            {
-                forwordpower = 0.0f;//前進運動停止
-                localAngle.y = 180.0f;//カメラ側を向くように回転
-                transform.localEulerAngles = localAngle;//実際にここで回転を変える
-                animator.SetBool("Dance", true);//アニメーションをDanceに変更
-            }
-            if(isOver)
-            {
-                forwordpower = 0.0f;//前進運動停止
-                animator.SetBool("Death", true);//アニメーションをDanceに変更
-            }
 
             forwordpower *= times;
+        }
+        if (isClear)
+        {
+            forwordpower = 0.0f;//前進運動停止
+            localAngle.y = 180.0f;//カメラ側を向くように回転
+            transform.localEulerAngles = localAngle;//実際にここで回転を変える
+            animator.SetBool("Dance", true);//アニメーションをDanceに変更
+        }
+        if (isOver)
+        {
+            forwordpower = 0.0f;//前進運動停止
+            animator.SetBool("Death", true);//アニメーションをDanceに変更
         }
     }
 
