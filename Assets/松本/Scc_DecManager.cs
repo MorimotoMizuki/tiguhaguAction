@@ -32,13 +32,13 @@ public class Scc_DecManager : MonoBehaviour
     void Accelalation()
     {
         tmpspeed = playerController.forwordpower;
-        playerController.forwordpower = playerController.forwordpower + kasokudo;
+        playerController.forwordpower = playerController.forwordpower * kasokudo;
     }
 
     void Deceleration()
     {
         tmpspeed = playerController.forwordpower;
-        playerController.forwordpower = playerController.forwordpower + gensokudo;
+        playerController.forwordpower = playerController.forwordpower * gensokudo;
     }
 
     private void OnTriggerEnter(Collider other)

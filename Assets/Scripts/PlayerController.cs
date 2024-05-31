@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody rb;
     public float forwordpower = 0.01f;//�O�����̋����ړ��̗�
     float widthpower = 0.2f;//���ړ��̕�
-    float jumpforce = 3.5f;//�W�����v���̗͉���
+    float jumpforce = 4.0f;//�W�����v���̗͉���
     public bool isGround = true;//�n�ʂɂ��Ă��邩�ǂ���
     public int playerHP=10;//�v���C���[��HP
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public bool isClear = false;//�N���A���Ă��邩�ǂ���
     public bool isOver = false;//�Q�[���I�[�o�[���Ă��邩�ǂ���
 
-
+    public Vector3 playerpos;//プレイヤーの現在地保存用
 
     // Start is called before the first frame update
     void Start()
@@ -34,27 +34,20 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         isClear = false;
         isOver = false;
-    }
+}
 
     // Update is called once per frame
-    void Update()
+    void Update()//入力、判定はこっちで行うこと
     {
         if (StartButtonSC.isStart)
         {
-            Transform transform = this.transform;           //transform���擾
-            Vector3 localAngle = transform.localEulerAngles;//���[�J�����W����ɁA��]���擾
-            localAngle.y = 0.0f;                            //���[�J�����W����ɁAy�������ɂ�����]��0�x�ɕύX
-            transform.localEulerAngles = localAngle;        //��]�p�x��ݒ�
 
-            characterController.Move(this.gameObject.transform.forward * forwordpower);
-            animator.SetBool("Run", true);//�A�j���[�^�[�p�����[�^�[Run��true�ɂ���
-
-            if (Input.GetKeyDown(KeyCode.Space) && -5.0f < transform.position.x && !isClear)//�������Ɉړ�
+            if (Input.GetKeyDown(KeyCode.Space) && -15.0f < transform.position.x && !isClear)//�������Ɉړ�
             {
                 //transform.position -= widthpower * transform.right;
                 characterController.Move(this.gameObject.transform.right * -1 * widthpower);
             }
-            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && transform.position.x < 5.0f && !isClear)//�E�����Ɉړ�
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && transform.position.x < 15.0f && !isClear)//�E�����Ɉړ�
             {
                 //transform.position += widthpower * transform.right;
                 characterController.Move(this.gameObject.transform.right * widthpower);
@@ -73,32 +66,57 @@ public class PlayerController : MonoBehaviour
                 vector.y += Physics.gravity.y * Time.deltaTime;
             }
 
-            forwordpower *= times;
 
-            if (isClear)
-            {
-                forwordpower = 0.0f;
-                localAngle.y = 180.0f;
-                transform.localEulerAngles = localAngle;
-                animator.SetBool("Dance", true);
-            }
 
-            //�L�����N�^�[�𓮂���
-            characterController.Move(vector * Time.deltaTime);
+            
+
+            
 
             //transform.position += forwordpower * transform.forward;
             //rb.velocity = Vector3.forward * 2.0f;//�O�����ɂQN�̗͂ňړ�����
         }
+        playerpos = this.transform.position;
+    }
+    private void FixedUpdate()//実際に動かすときはこっちの関数を使う
+    {
+        Transform transform = this.transform;           //transformを保存する
+        Vector3 localAngle = transform.localEulerAngles;//現在のプレイヤーの方向をとってくる
+        localAngle.y = 0.0f;                            //Y軸回転を0に強制的に変える
+        transform.localEulerAngles = localAngle;        //実際にここで回転を変える
+
+        if (StartButtonSC.isStart)
+        {
+            characterController.Move(this.gameObject.transform.forward * forwordpower);
+            animator.SetBool("Run", true);//アニメーションを基本はRunにする
+
+            //前進運動
+            characterController.Move(vector * Time.deltaTime);
+
+            if (isClear)
+            {
+                forwordpower = 0.0f;//前進運動停止
+                localAngle.y = 180.0f;//カメラ側を向くように回転
+                transform.localEulerAngles = localAngle;//実際にここで回転を変える
+                animator.SetBool("Dance", true);//アニメーションをDanceに変更
+            }
+            if(isOver)
+            {
+                forwordpower = 0.0f;//前進運動停止
+                animator.SetBool("Death", true);//アニメーションをDanceに変更
+            }
+
+            forwordpower *= times;
+        }
     }
 
-    private void OnCollisionExit(Collision collision)//�R���W�������痣��Ă��遁�n�ʂƐڐG���Ă��Ȃ�
+    private void OnCollisionExit(Collision collision)//地面から離れたとき呼び出される
     {
         isGround = false;
         Debug.Log("isground");
 
     }
 
-    private void OnTriggerEnter(Collider other)//Trigger�ɐڐG�����Ƃ�
+    private void OnTriggerEnter(Collider other)//Triggerとの接触判定
     {
         
         playerCollision.PCollision(other);
@@ -108,7 +126,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")//�n�ʂƐڐG���Ă邩�ǂ���
+        if (collision.gameObject.tag == "Ground")//地面と接触した時呼び出される
         {
             isGround = true;
             animator.SetBool("Jump", false);
