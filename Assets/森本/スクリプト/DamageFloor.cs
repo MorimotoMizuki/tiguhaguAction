@@ -12,6 +12,11 @@ public class DamageFloor : MonoBehaviour
     //Player‚ªƒ_ƒ[ƒW°‚Éæ‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©”»’è‚·‚é
     private bool PlayerStay = false;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerStay = true;
+        Damage();
+    }
     private void OnTriggerExit(Collider other)//—£‚ê‚½‚ç
     {
         PlayerStay = false;
