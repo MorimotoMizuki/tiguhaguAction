@@ -4,17 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
- main
-
-
-  - Ground
-  - Obstacle
-  - Clear
-  - Gold
-  - Silver
   - Copper
- main
- main
+  - Obstacle
+  - Silver
+  - Gold
+  - Clear
+  - Ground
+  - HeelPotion
   layers:
   - Default
   - TransparentFX

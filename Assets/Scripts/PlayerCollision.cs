@@ -34,7 +34,25 @@ public class PlayerCollision : MonoBehaviour
             otherCol.enabled = false;
             stageSEManager.DamageSE();
         }
-        if(other.gameObject.tag=="Clear")//クリアWall
+        if (other.gameObject.tag == "HeelPotion")//回復ポーション
+        {
+            if(playerController.playerHP != playerHPMAX)
+            {
+                if (playerHPMAX - playerController.playerHP > 5)
+                {
+                    playerController.playerHP += 5;
+                }
+                else if(playerHPMAX - playerController.playerHP < 5)
+                {
+                    playerController.playerHP += playerHPMAX - playerController.playerHP;
+                }
+                hpbarManager.HPdamage();
+                stageSEManager.HeelSE();
+            }
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag=="Clear")//クリアWall
         {
             gameclearover.GameClearobj.SetActive(true);
             playerController.isClear = true;

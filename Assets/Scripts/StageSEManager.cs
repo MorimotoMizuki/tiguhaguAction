@@ -33,4 +33,12 @@ public class StageSEManager : MonoBehaviour
     {
         audioSource.PlayOneShot(audioClip[2]);
     }
+    public void HeelSE()
+    {
+        audioSource.PlayOneShot(audioClip[3]);
+    }
+    public void OverSE()
+    {
+        audioSource.PlayOneShot(audioClip[4]);
+    }
 }
