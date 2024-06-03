@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8569084457397929006}
   - component: {fileID: 8569084457397929007}
-  - component: {fileID: 2670035670025934374}
+  - component: {fileID: 9072563612659502166}
   m_Layer: 0
   m_Name: "\u5DE6\u30C9\u30C3\u30B9\u30F3 "
   m_TagString: Obstacle
@@ -54,19 +54,20 @@ MonoBehaviour:
   isFB: 0
   forwordpower: 0
   sidepower: 0.02
---- !u!65 &2670035670025934374
-BoxCollider:
+--- !u!64 &9072563612659502166
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8569084457397929004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.5323625, y: 1.321873, z: 1.3124847}
-  m_Center: {x: -1.2661812, y: 0.16093647, z: -0.021980286}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: d70f3f327de1d464196746c93d95c7fd, type: 3}
 --- !u!1 &8569084457739875779
 GameObject:
   m_ObjectHideFlags: 0
