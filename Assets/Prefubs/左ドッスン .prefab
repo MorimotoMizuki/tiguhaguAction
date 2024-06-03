@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9072563612659502166}
   m_Layer: 0
   m_Name: "\u5DE6\u30C9\u30C3\u30B9\u30F3 "
-  m_TagString: Obstacle
+  m_TagString: Bard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
