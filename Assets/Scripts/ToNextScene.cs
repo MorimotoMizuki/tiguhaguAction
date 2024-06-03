@@ -24,8 +24,13 @@ public class ToNextScene : MonoBehaviour
         Invoke("Late", 1.0f);
     }
     private void Late()
-    {
-        
+    {    
         SceneManager.LoadScene(sceneName);
+    }
+    public void Stage_LoadScene(int stagenum)//’x‰„‚È‚µ‚ÅƒV[ƒ“ˆÚ“®
+    {
+        GameManager.stage_num = stagenum;
+        Time.timeScale = 1;
+        Late();
     }
 }
