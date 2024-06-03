@@ -52,6 +52,11 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if(other.gameObject.tag == "Over")//ゲームオーバー
+        {
+            playerController.isOver = true;
+        }
+
         if (other.gameObject.tag=="Clear")//クリアWall
         {
             gameclearover.GameClearobj.SetActive(true);
