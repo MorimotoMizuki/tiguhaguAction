@@ -42,11 +42,11 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-        if (GameManager.stage1_P || huragu)//ステージ１がパーフェクト
+        if (GameManager.stage1_P)//ステージ１がパーフェクト
         {
             Instantiate(Perfect, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - minus_G || huragu)//金
+        else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - minus_G)//金
         {
             Instantiate(Gold, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
