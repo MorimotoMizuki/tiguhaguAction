@@ -43,8 +43,8 @@ public class Clear_pic_Generate : MonoBehaviour
 
     //各ステージのMAXScore設定
     private int Stage1_MAX = 11500;
-    private int Stage2_MAX = 10000;
-    private int Stage3_MAX = 10000;
+    private int Stage2_MAX = 20000;
+    private int Stage3_MAX = 30000;
 
     //一回だけ処理をするための変数
     private bool once_clear;

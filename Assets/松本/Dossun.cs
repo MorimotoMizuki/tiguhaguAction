@@ -22,7 +22,7 @@ public class Dossun : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(playerController.transform.position.z> transform.position.z-forwordlimit&&playerController.transform.position.z< transform.position.z - backlimit)
         {

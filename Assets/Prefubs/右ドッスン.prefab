@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 445526168226972995}
   - component: {fileID: 445526168226972994}
-  - component: {fileID: -7395547933470533938}
   m_Layer: 0
   m_Name: "\u53F3\u30C9\u30C3\u30B9\u30F3"
   m_TagString: Bard
@@ -53,21 +52,7 @@ MonoBehaviour:
   isLeft: 0
   isFB: 0
   forwordpower: 0
-  sidepower: 0.02
---- !u!64 &-7395547933470533938
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445526168226973005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: d70f3f327de1d464196746c93d95c7fd, type: 3}
+  sidepower: 0.1
 --- !u!1 &8602563037386941024
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,9 +64,10 @@ GameObject:
   - component: {fileID: 708295492668535131}
   - component: {fileID: 2378869973874804753}
   - component: {fileID: 1163841313884712069}
+  - component: {fileID: 7141698978013428639}
   m_Layer: 0
   m_Name: "\u53F3\u30C9\u30C3\u30B9\u30F3"
-  m_TagString: Untagged
+  m_TagString: Bard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,3 +137,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7141698978013428639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602563037386941024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: d70f3f327de1d464196746c93d95c7fd, type: 3}

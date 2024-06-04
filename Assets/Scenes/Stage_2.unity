@@ -250,8 +250,8 @@ MonoBehaviour:
   scoreManager: {fileID: 1311053719}
   stage1MAXscore: 11500
   stage2MAXscore: 20000
-  stage3MAXscore: 20000
-  playerHPMAX: 10
+  stage3MAXscore: 30000
+  playerHPMAX: 100
 --- !u!114 &37448035
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class Invinsible : MonoBehaviour
         {
             invisi_time += 1f;
             playerMat.material = invisible;
-            if(invisi_time>200)
+            if(invisi_time>220)
             {
                 isInvisi = false;
                 playerCol.enabled = true;

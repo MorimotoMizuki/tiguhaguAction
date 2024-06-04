@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             //parentcanvas = GameObject.Find("Canvas");
             //Instantiate(allclearButtom, new Vector3(0, -100, 0), Quaternion.identity, parentcanvas.transform);
             isOnce = true;
-            Invoke("Next", 2.0f);
+            Invoke("Next", 3.0f);
         }
     }
 
