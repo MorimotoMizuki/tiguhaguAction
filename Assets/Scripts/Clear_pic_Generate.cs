@@ -23,6 +23,7 @@ public class Clear_pic_Generate : MonoBehaviour
 
     //オブジェクトの場所調整用
     public Transform OBJ_T;
+    private float pos_ad = 150.0f;
 
     //花火を入れる変数
     public GameObject Hanabi_Yellow;
@@ -77,7 +78,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 if (GameManager.stage1_P)//ステージ１がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
-                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 10 5
                     for (int i = 0; i < 10; i++, interval += 5)
@@ -103,7 +104,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - 3000)//金
                 {
                     Instantiate(Gold, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 6 8
                     for (int i = 0; i < 6; i++, interval += 8)
@@ -128,7 +129,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage1_MAX - 3000 && MyScore >= Stage1_MAX - 8000)//銀
                 {
                     Instantiate(Silver, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 4 14
                     for (int i = 0; i < 4; i++, interval += 14)
@@ -154,7 +155,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage1_MAX - 8000 && MyScore >= 0)//銅
                 {
                     Instantiate(Bronze, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 3 20
                     for (int i = 0; i < 3; i++, interval += 20)
@@ -187,7 +188,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 if (GameManager.stage2_P)//ステージ２がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
-                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 10 5
                     for (int i = 0; i < 10; i++, interval += 5)
@@ -213,7 +214,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage2_MAX && MyScore >= Stage2_MAX - 3000)//金
                 {
                     Instantiate(Gold, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 6 8
                     for (int i = 0; i < 6; i++, interval += 8)
@@ -239,7 +240,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage2_MAX - 3000 && MyScore >= Stage2_MAX - 8000)//銀
                 {
                     Instantiate(Silver, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 4 14
                     for (int i = 0; i < 4; i++, interval += 14)
@@ -265,7 +266,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage2_MAX - 8000 && MyScore >= 0)//銅
                 {
                     Instantiate(Bronze, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 3 20
                     for (int i = 0; i < 3; i++, interval += 20)
@@ -298,7 +299,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 if (GameManager.stage3_P)//ステージ３がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
-                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 10 5
                     for (int i = 0; i < 10; i++, interval += 5)
@@ -324,7 +325,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage3_MAX && MyScore >= Stage3_MAX - 3000)//金
                 {
                     Instantiate(Gold,OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Excellent, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 6 8
                     for (int i = 0; i < 6; i++, interval += 8)
@@ -350,7 +351,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage3_MAX - 3000 && MyScore >= Stage3_MAX - 8000)//銀
                 {
                     Instantiate(Silver, OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Great, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 4 14
                     for (int i = 0; i < 4; i++, interval += 14)
@@ -376,7 +377,7 @@ public class Clear_pic_Generate : MonoBehaviour
                 else if (MyScore <= Stage3_MAX - 8000 && MyScore >= 0)//銅
                 {
                     Instantiate(Bronze,OBJ_T.transform.position, Quaternion.identity, Parent);
-                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + 100.0f, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
+                    Instantiate(Good, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
 
                     //花火 3 20
                     for (int i = 0; i < 3; i++, interval += 20)
