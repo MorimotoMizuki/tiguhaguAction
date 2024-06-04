@@ -15,6 +15,7 @@ public class DamageFloor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerStay = true;
+        Debug.Log("haiteru");
         Damage();
     }
     private void OnTriggerExit(Collider other)//—£‚ê‚½‚ç
@@ -36,7 +37,7 @@ public class DamageFloor : MonoBehaviour
     {
         if(PlayerStay)
         {
-            playerController.playerHP -= 1;//HP 5Œ¸‚ç‚·
+            playerController.playerHP -= 5;//HP 5Œ¸‚ç‚·
             hpbarManager.HPdamage();
             playerCollision.isBlink = true;
             stageSEManager.DamageSE();

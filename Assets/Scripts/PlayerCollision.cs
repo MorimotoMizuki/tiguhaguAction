@@ -159,5 +159,6 @@ public class PlayerCollision : MonoBehaviour
             stageSEManager.CoinSE();
         }
         Debug.Log(other.gameObject.name);
+        Debug.Log(other.gameObject.tag);
     }
 }
