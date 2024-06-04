@@ -41,8 +41,8 @@ public class RulSpwan : MonoBehaviour
     private void Rule()
     {
         //二つのテキストを表示
-        Instantiate(Rule_Text       , new Vector3(OBJ_T.transform.position.x - 300, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
-        Instantiate(Objective_Text  , new Vector3(OBJ_T.transform.position.x + 300, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
+        Instantiate(Rule_Text       , new Vector3(OBJ_T.transform.position.x - 285, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
+        Instantiate(Objective_Text  , new Vector3(OBJ_T.transform.position.x + 285, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
 
         once = true;
     }
