@@ -44,8 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ace1fc35a2c0e4389529c85a22ae92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage_num: 0
-  stage1_P: 0
-  stage2_P: 0
-  stage3_P: 0
-  gameManagerPrefabs: []
+  allclearButtom: {fileID: 6515919245413950683, guid: 52d34bad5e9a7dc42ad25cb1ec4ff8e7, type: 3}
