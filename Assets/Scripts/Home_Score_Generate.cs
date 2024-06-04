@@ -16,13 +16,24 @@ public class Home_Score_Generate : MonoBehaviour
     //親を指定
     public Transform Parent;
 
+    //メダルの位置調整用
+    public Transform Button1;
+    public Transform Button2;
+    public Transform Button3;
+
     //呼び出したスコアを格納する変数
     private int MyScore;
 
     //各ステージのMAXScore設定
     private int Stage1_MAX = 11500;
-    private int Stage2_MAX = 10000;
-    private int Stage3_MAX = 10000;
+    private int Stage2_MAX = 20000;
+    private int Stage3_MAX = 30000;
+
+    //引く点数用
+    private int minus_G = 3000;
+    private int minus_S = 8000;
+
+    private bool huragu = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,21 +42,21 @@ public class Home_Score_Generate : MonoBehaviour
         //マイスコアにスコアを格納
         MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-        if (GameManager.stage1_P)//ステージ１がパーフェクト
+        if (GameManager.stage1_P || huragu)//ステージ１がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(255f, 426f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - 3000)//金
+        else if (MyScore <= Stage1_MAX && MyScore >= Stage1_MAX - minus_G || huragu)//金
         {
-            Instantiate(Gold, new Vector3(230f, 410f, 0f), Quaternion.identity, Parent);
+            Instantiate(Gold, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage1_MAX - 3000 && MyScore >= Stage1_MAX - 8000)//銀
+        else if (MyScore <= Stage1_MAX - minus_G && MyScore >= Stage1_MAX - minus_S)//銀
         {
-            Instantiate(Silver, new Vector3(230f, 410f, 0f), Quaternion.identity, Parent);
+            Instantiate(Silver, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage1_MAX - 8000 && MyScore >= 0)//銅
+        else if (MyScore <= Stage1_MAX - minus_S && MyScore >= 0)//銅
         {
-            Instantiate(Bronze, new Vector3(230f, 410f, 0f), Quaternion.identity, Parent);
+            Instantiate(Bronze, new Vector3(Button1.transform.position.x + 35.0f, Button1.transform.position.y + 2.0f, Button1.transform.position.z), Quaternion.identity, Parent);
         }
 
         //ステージ２
@@ -54,19 +65,19 @@ public class Home_Score_Generate : MonoBehaviour
 
         if (GameManager.stage2_P)//ステージ２がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(420f, 286f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(Button2.transform.position.x + 35.0f, Button2.transform.position.y + 2.0f, Button2.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage2_MAX && MyScore >= Stage2_MAX - 3000)//金
+        else if (MyScore <= Stage2_MAX && MyScore >= Stage2_MAX - minus_G)//金
         {
-            Instantiate(Gold, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
+            Instantiate(Gold, new Vector3(Button2.transform.position.x + 35.0f, Button2.transform.position.y + 2.0f, Button2.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage2_MAX - 3000 && MyScore >= Stage2_MAX - 8000)//銀
+        else if (MyScore <= Stage2_MAX - minus_G && MyScore >= Stage2_MAX - minus_S)//銀
         {
-            Instantiate(Silver, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
+            Instantiate(Silver, new Vector3(Button2.transform.position.x + 35.0f, Button2.transform.position.y + 2.0f, Button2.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage2_MAX - 8000 && MyScore >= 0)//銅
+        else if (MyScore <= Stage2_MAX - minus_S && MyScore >= 0)//銅
         {
-            Instantiate(Bronze, new Vector3(400f, 265f, 0f), Quaternion.identity, Parent);
+            Instantiate(Bronze, new Vector3(Button2.transform.position.x + 35.0f, Button2.transform.position.y + 2.0f, Button2.transform.position.z), Quaternion.identity, Parent);
         }
 
         //ステージ３
@@ -75,19 +86,19 @@ public class Home_Score_Generate : MonoBehaviour
 
         if (GameManager.stage3_P)//ステージ３がパーフェクト
         {
-            Instantiate(Perfect, new Vector3(595f, 137f, 0f), Quaternion.identity, Parent);
+            Instantiate(Perfect, new Vector3(Button3.transform.position.x + 35.0f, Button3.transform.position.y + 2.0f, Button3.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage3_MAX && MyScore >= Stage3_MAX - 3000)//金
+        else if (MyScore <= Stage3_MAX && MyScore >= Stage3_MAX - minus_G)//金
         {
-            Instantiate(Gold, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
+            Instantiate(Gold, new Vector3(Button3.transform.position.x + 35.0f, Button3.transform.position.y + 2.0f, Button3.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage3_MAX - 3000 && MyScore >= Stage3_MAX - 8000)//銀
+        else if (MyScore <= Stage3_MAX - minus_G && MyScore >= Stage3_MAX - minus_S)//銀
         {
-            Instantiate(Silver, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
+            Instantiate(Silver, new Vector3(Button3.transform.position.x + 35.0f, Button3.transform.position.y + 2.0f, Button3.transform.position.z), Quaternion.identity, Parent);
         }
-        else if (MyScore <= Stage3_MAX - 8000 && MyScore >= 0)//銅
+        else if (MyScore <= Stage3_MAX - minus_S && MyScore >= 0)//銅
         {
-            Instantiate(Bronze, new Vector3(580f, 116f, 0f), Quaternion.identity, Parent);
+            Instantiate(Bronze, new Vector3(Button3.transform.position.x + 35.0f, Button3.transform.position.y + 2.0f, Button3.transform.position.z), Quaternion.identity, Parent);
         }
     }
 
