@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2373,6 +2373,9 @@ MonoBehaviour:
   Silver: {fileID: 7786914914025908539, guid: e3de9755069062347af170cd7b1f837b, type: 3}
   Bronze: {fileID: 4934829502558149617, guid: 05dbbaa49ca2893478c442fa74695b24, type: 3}
   Parent: {fileID: 523221505}
+  Button1: {fileID: 2051948999}
+  Button2: {fileID: 1521984990}
+  Button3: {fileID: 250654782}
 --- !u!1 &2051948998
 GameObject:
   m_ObjectHideFlags: 0

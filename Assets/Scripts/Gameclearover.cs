@@ -19,7 +19,7 @@ public class Gameclearover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerController.playerHP == 0 || playerController.isOver) 
+        if (playerController.playerHP <= 0 || playerController.isOver) 
         {
             Gameoverobj.SetActive(true);
             playerController.isOver = true;
