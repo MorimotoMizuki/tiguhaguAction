@@ -33,8 +33,6 @@ public class Home_Score_Generate : MonoBehaviour
     private int minus_G = 3000;
     private int minus_S = 8000;
 
-    private bool huragu = true;
-
     // Start is called before the first frame update
     void Start()
     {
