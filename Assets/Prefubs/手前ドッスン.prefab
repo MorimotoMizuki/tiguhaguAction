@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5895825105069552349}
   m_Layer: 0
   m_Name: "\u624B\u524D\u30C9\u30C3\u30B9\u30F3"
-  m_TagString: Obstacle
+  m_TagString: Bard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -25,9 +25,63 @@ public class PlayerCollision : MonoBehaviour
     public void PCollision(Collider other)//ê⁄êGéûÇ…åƒÇ—èoÇ≥ÇÍÇÈ
     {
         otherCol = null;
-        if (other.gameObject.tag == "Obstacle")//è·äQï®
+        if (other.gameObject.tag == "Obstacle")//è·äQï®(è¨êŒ)
         {
-            playerController.playerHP--;
+            playerController.playerHP-=5;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "Obstacle2")//è·äQï®(ä‚)
+        {
+            playerController.playerHP -= 10;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "IronBall")//è·äQï®(ìSãÖ)
+        {
+            playerController.playerHP -= 15;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "Bard")//è·äQï®(íπ)
+        {
+            playerController.playerHP -= 10;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "Obstacle3")//è·äQï®(èƒÇ´êŒ)
+        {
+            playerController.playerHP -= 10;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "Obstacle4")//è·äQï®(èƒÇ´ä‚)
+        {
+            playerController.playerHP -= 15;
+            hpbarManager.HPdamage();
+            isBlink = true;
+            otherCol = other.gameObject.GetComponent<MeshCollider>();
+            otherCol.enabled = false;
+            stageSEManager.DamageSE();
+        }
+        if (other.gameObject.tag == "RedBall")//è·äQï®(ê‘ãÖ)
+        {
+            playerController.playerHP -= 20;
             hpbarManager.HPdamage();
             isBlink = true;
             otherCol = other.gameObject.GetComponent<MeshCollider>();
@@ -104,5 +158,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
             stageSEManager.CoinSE();
         }
+        Debug.Log(other.gameObject.name);
+        Debug.Log(other.gameObject.tag);
     }
 }

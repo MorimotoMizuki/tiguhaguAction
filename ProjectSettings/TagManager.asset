@@ -12,6 +12,12 @@ TagManager:
   - Ground
   - HeelPotion
   - Over
+  - Obstacle2
+  - IronBall
+  - Bard
+  - Obstacle3
+  - Obstacle4
+  - RedBall
   layers:
   - Default
   - TransparentFX
