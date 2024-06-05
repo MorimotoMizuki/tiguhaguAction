@@ -124,6 +124,7 @@ public class PlayerCollision : MonoBehaviour
                     PlayerPrefs.SetInt("STAGE1SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage1MAXscore && playerController.playerHP == playerHPMAX)
                     GameManager.stage1_P = true;
+                GameManager.stage1_clear = true;
             }
             if (GameManager.stage_num == 2)
             {
@@ -131,6 +132,7 @@ public class PlayerCollision : MonoBehaviour
                     PlayerPrefs.SetInt("STAGE2SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage2MAXscore && playerController.playerHP == playerHPMAX)
                     GameManager.stage2_P = true;
+                GameManager.stage2_clear = true;
             } 
             if (GameManager.stage_num == 3)
             {
@@ -138,13 +140,8 @@ public class PlayerCollision : MonoBehaviour
                     PlayerPrefs.SetInt("STAGE3SCORE", scoreManager.score_num);
                 if (scoreManager.score_num == stage3MAXscore && playerController.playerHP == playerHPMAX)
                     GameManager.stage3_P = true;
-            }
-            if (GameManager.stage_num == 1)
-                GameManager.stage1_clear = true;
-            if (GameManager.stage_num == 2)
-                GameManager.stage2_clear = true;
-            if (GameManager.stage_num == 3)
                 GameManager.stage3_clear = true;
+            }
 
             //ƒNƒŠƒA‚µ‚½‚Ì‰‰o
             clear_pic_generate.ClearDisplay();
