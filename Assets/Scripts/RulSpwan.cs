@@ -34,15 +34,17 @@ public class RulSpwan : MonoBehaviour
         if(StartButtonSC.isStart)
         {
             //パネルを消す
-            Destroy(Rule_Panel);
+            Rule_Text.SetActive(false);
+            Objective_Text.SetActive(false);
         }
     }
 
     private void Rule()
     {
         //二つのテキストを表示
-        Instantiate(Rule_Text       , new Vector3(OBJ_T.transform.position.x - 285, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
-        Instantiate(Objective_Text  , new Vector3(OBJ_T.transform.position.x + 285, OBJ_T.transform.position.y, OBJ_T.transform.position.z), Quaternion.identity, Parent);
+        Rule_Text.SetActive(true);
+        Objective_Text.SetActive(true);
+        Debug.Log("aaa");
 
         once = true;
     }

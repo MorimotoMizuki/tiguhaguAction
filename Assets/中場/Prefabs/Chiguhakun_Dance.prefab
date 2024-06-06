@@ -949,6 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9059476173148504742}
   - component: {fileID: 3123691918850791644}
+  - component: {fileID: 6895035872117271980}
   m_Layer: 0
   m_Name: Chiguhakun_Dance
   m_TagString: Untagged
@@ -994,3 +995,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6895035872117271980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571028730432034844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c039d785ca005af43a5de441ee862dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiguhakun:
+  - {fileID: 7823526105879050271}
+  - {fileID: 4091799345464189698}
+  Nizimatbody: {fileID: 2100000, guid: abb0d724b8554b64285e4a13f16992bc, type: 2}
+  Nizimathead: {fileID: 2100000, guid: abb0d724b8554b64285e4a13f16992bc, type: 2}

@@ -18,6 +18,7 @@ TagManager:
   - Obstacle3
   - Obstacle4
   - RedBall
+  - HomeCoin
   layers:
   - Default
   - TransparentFX
