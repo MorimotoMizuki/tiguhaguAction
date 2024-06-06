@@ -18,9 +18,9 @@ public class PlayerPrfsReset : MonoBehaviour
 
     public void Onclick()
     {
-        PlayerPrefs.SetInt("STAGE1SCORE", -1);
-        PlayerPrefs.SetInt("STAGE2SCORE", -1);
-        PlayerPrefs.SetInt("STAGE3SCORE", -1);
+        PlayerPrefs.SetInt("STAGE1SCORE",-1);
+        PlayerPrefs.SetInt("STAGE2SCORE",-1);
+        PlayerPrefs.SetInt("STAGE3SCORE",-1);
 
         GameObject[] objects = GameObject.FindGameObjectsWithTag("HomeCoin");
         foreach (GameObject ball in objects)
