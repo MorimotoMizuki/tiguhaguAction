@@ -75,7 +75,7 @@ public class Clear_pic_Generate : MonoBehaviour
             {
                 MyScore = PlayerPrefs.GetInt("STAGE1SCORE", -1);
 
-                if (GameManager.stage1_P)//ステージ１がパーフェクト
+                if (playerController.playerHP==100&&Stage1_MAX==MyScore)//ステージ１がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
                     Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
@@ -185,7 +185,7 @@ public class Clear_pic_Generate : MonoBehaviour
             {
                 MyScore = PlayerPrefs.GetInt("STAGE2SCORE", -1);
 
-                if (GameManager.stage2_P)//ステージ２がパーフェクト
+                if (playerController.playerHP == 100 && Stage2_MAX == MyScore)//ステージ２がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
                     Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉
@@ -296,7 +296,7 @@ public class Clear_pic_Generate : MonoBehaviour
             {
                 MyScore = PlayerPrefs.GetInt("STAGE3SCORE", -1);
 
-                if (GameManager.stage3_P)//ステージ３がパーフェクト
+                if (playerController.playerHP == 100 && Stage3_MAX == MyScore)//ステージ３がパーフェクト
                 {
                     Instantiate(Perfect, OBJ_T.transform.position, Quaternion.identity, Parent);//メダル
                     Instantiate(Congratulations, new Vector3(OBJ_T.transform.position.x, OBJ_T.transform.position.y + pos_ad, OBJ_T.transform.position.z), Quaternion.identity, Parent);//ゲーミング誉め言葉

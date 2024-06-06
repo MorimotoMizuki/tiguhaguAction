@@ -94,7 +94,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 if (playerHPMAX - playerController.playerHP > 5)
                 {
-                    playerController.playerHP += 5;
+                    playerController.playerHP += 30;
                 }
                 else if(playerHPMAX - playerController.playerHP < 5)
                 {

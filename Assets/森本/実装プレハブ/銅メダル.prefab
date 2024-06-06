@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4699865692851362434}
   m_Layer: 5
   m_Name: "\u9285\u30E1\u30C0\u30EB"
-  m_TagString: Untagged
+  m_TagString: HomeCoin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
