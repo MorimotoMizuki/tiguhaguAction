@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3308,6 +3308,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6895035872117271980, guid: 5ce1caf2bfb409c449d5db337115cc52, type: 3}
+      propertyPath: Nizimatbody
+      value: 
+      objectReference: {fileID: 2100000, guid: 43323c9344ad8194d887b51870fd26ca, type: 2}
+    - target: {fileID: 6895035872117271980, guid: 5ce1caf2bfb409c449d5db337115cc52, type: 3}
+      propertyPath: Nizimathead
+      value: 
+      objectReference: {fileID: 2100000, guid: a05568a3a37a44a4d8bbe90bd1d33d94, type: 2}
     - target: {fileID: 8571028730432034844, guid: 5ce1caf2bfb409c449d5db337115cc52, type: 3}
       propertyPath: m_Name
       value: Chiguhakun_Dance

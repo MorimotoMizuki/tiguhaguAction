@@ -27,6 +27,12 @@ public class PlayerPrfsReset : MonoBehaviour
         {
             Destroy(ball);
         }
-        
+
+        //GameManager.stage1_clear = true;
+        //GameManager.stage2_clear = true;
+        //GameManager.stage3_clear = true;
+        //GameManager.stage1_P = true;
+        //GameManager.stage2_P = true;
+        //GameManager.stage3_P = true;
     }
 }
